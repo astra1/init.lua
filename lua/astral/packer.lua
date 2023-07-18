@@ -28,6 +28,13 @@ return require('packer').startup(function(use)
 
     use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
     use("nvim-treesitter/playground")
+    use {
+        "windwp/nvim-ts-autotag",
+        requires = {'nvim-treesitter/nvim-treesitter'},
+        config = function ()
+            require('nvim-ts-autotag').setup()
+        end
+    }
 
     -- todo: dirty fix
     use({ "elgiano/nvim-treesitter-angular", branch = "topic/jsx-fix" })
@@ -48,6 +55,7 @@ return require('packer').startup(function(use)
             { 'saadparwaiz1/cmp_luasnip' },
             { 'hrsh7th/cmp-nvim-lsp' },
             { 'hrsh7th/cmp-nvim-lua' },
+            { 'hrsh7th/vim-vsnip-integ' },
 
             -- Snippets
             { 'L3MON4D3/LuaSnip' },
@@ -57,13 +65,6 @@ return require('packer').startup(function(use)
 
     use("tpope/vim-fugitive")
     use("mbbill/undotree")
-
-    use {
-        'goolord/alpha-nvim',
-        config = function()
-            require 'alpha'.setup(require 'alpha.themes.dashboard'.config)
-        end
-    }
 
     use {
         'nvim-tree/nvim-tree.lua',

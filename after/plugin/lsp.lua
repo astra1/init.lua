@@ -4,7 +4,7 @@ lsp.preset("recommended")
 
 lsp.ensure_installed({
     'tsserver',
-'rust_analyzer',
+    'rust_analyzer',
     'angularls',
     'html',
     'cssls',
@@ -72,8 +72,13 @@ lsp.format_mapping('<leader>fm', {
     timeout_ms = 10000,
   },
   servers = {
-    ['null-ls'] = {'javascript', 'typescript', 'html'},
+    ['null-ls'] = {'javascript', 'typescript', 'html', 'json', 'css'},
   }
+})
+
+require("lspconfig")["ansiblels"].setup({
+  filetypes = { "yaml", "yml", "ansible" },
+  single_file_support = false,
 })
 
 lsp.setup()

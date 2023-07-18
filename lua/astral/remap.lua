@@ -7,10 +7,11 @@ vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
+vim.keymap.set('n', '<C-f>', '<cmd>silent !tmux neww tmux-sessionizer<CR>')
+
 -- TODO: 
 -- set mapping for saving to the system clipboard
 
 -- greatest remap ever
 vim.keymap.set('x', '<leader>p', '\'_dP')
 
--- vim.keymap.set('n', '<leader>fm', vim.lsp.buf.format)
