@@ -81,6 +81,14 @@ return require('packer').startup(function(use)
         requires = { "nvim-lua/plenary.nvim" },
     })
 
+    use({
+        "kdheepak/lazygit.nvim",
+        -- optional for floating window border decoration
+        requires = {
+            "nvim-lua/plenary.nvim",
+        },
+    })
+
     -- Automatically set up your configuration after cloning packer.nvim
     if packer_bootstrap then
         require('packer').sync()

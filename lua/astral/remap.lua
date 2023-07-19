@@ -9,9 +9,10 @@ vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
 vim.keymap.set('n', '<C-f>', '<cmd>silent !tmux neww tmux-sessionizer<CR>')
 
--- TODO: 
--- set mapping for saving to the system clipboard
+vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 -- greatest remap ever
 vim.keymap.set('x', '<leader>p', '\'_dP')
 
+vim.keymap.set('n', '<leader>gg', '<cmd> :LazyGit<CR>');
